@@ -1,0 +1,25 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka, http://eureka7002.com:7002/eureka,
+
+
+
+  # feign的默认的时间是1s钟
+  #设置feign的默认的超时时间
+
+ribbon:
+  #指的是建立连接需要的时间
+  ReadTimeout: 5000
+  #指的是建立连接从服务器读取可用资源的时间
+  ConnectTimeout: 5000
+
+
+
+logging:
+  level:
+    #feign 日志以什么几倍看监控哪一个接口
+    com.mlz.sprigncloud.service.PaymentFeignService: debug
